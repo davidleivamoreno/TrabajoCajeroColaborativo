@@ -1,9 +1,17 @@
 // CajeroV1.java
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Scanner;
+import java.io.FileReader;
 
-private static void escribirMovimiento(String movimiento) {
+
+public class CajeroV1 {
+
+    private static void escribirMovimiento(String movimiento) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("movimientos.txt", true))) {
             writer.write(movimiento);
             writer.newLine(); // Añade una nueva línea después de cada movimiento
@@ -33,11 +41,8 @@ private static void escribirMovimiento(String movimiento) {
             System.out.println("Error al borrar los movimientos: " + e.getMessage());
         }
     }
-
-public class CajeroV1 {
     public static void main(String[] args) {
         BigDecimal saldo = BigDecimal.valueOf(1000.0);
-        //double saldo = 1000.0;
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
@@ -45,6 +50,7 @@ public class CajeroV1 {
             // Menú
             System.out.println("1- Retirar fondos");
             System.out.println("2- Ingresar fondos");
+            System.out.println("3- Ver movimientos");
             System.out.println("0- Salir");
             System.out.print("Ingrese la opción deseada: ");
             
@@ -55,7 +61,7 @@ public class CajeroV1 {
                     System.out.print("Ingrese la cantidad a retirar: ");
                     BigDecimal cantidadRetiro = BigDecimal.valueOf(scanner.nextDouble());
 
-                    if (cantidadRetiro.compareTo(saldo) == -1) {
+                    if (saldo.compareTo(cantidadRetiro) == -1) {
                         System.out.println("Saldo insuficiente. Su saldo actual es: " + saldo);
                     } else {
                         saldo = saldo.subtract(cantidadRetiro);
@@ -72,8 +78,6 @@ public class CajeroV1 {
                     {
                         System.out.println("Operacion incorrecta introduce un numero positivo");
                     }
-
-                
                     else {
                         saldo = saldo.add(cantidadIngreso);
                         System.out.println("Ingreso exitoso. Saldo actual: " + saldo);
