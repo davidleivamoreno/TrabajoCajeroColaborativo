@@ -1,10 +1,12 @@
 // CajeroV1.java
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class CajeroV1 {
     public static void main(String[] args) {
-        double saldo = 1000.0;
+        BigDecimal saldo = BigDecimal.valueOf(1000.0);
+        //double saldo = 1000.0;
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
@@ -20,21 +22,27 @@ public class CajeroV1 {
             switch (opcion) {
                 case 1:
                     System.out.print("Ingrese la cantidad a retirar: ");
-                    double cantidadRetiro = scanner.nextDouble();
+                    BigDecimal cantidadRetiro = BigDecimal.valueOf(scanner.nextDouble());
 
-                    if (cantidadRetiro > saldo) {
+                    if (cantidadRetiro.compareTo(saldo) == -1) {
                         System.out.println("Saldo insuficiente. Su saldo actual es: " + saldo);
                     } else {
-                        saldo -= cantidadRetiro;
+                        saldo = saldo.subtract(cantidadRetiro);
                         System.out.println("Retiro exitoso. Saldo restante: " + saldo);
                     }
                     break;
 
                 case 2:
                     System.out.print("Ingrese la cantidad a ingresar: ");
-                    double cantidadIngreso = scanner.nextDouble();
-                    saldo += cantidadIngreso;
-                    System.out.println("Ingreso exitoso. Saldo actual: " + saldo);
+                    BigDecimal cantidadIngreso = BigDecimal.valueOf(scanner.nextDouble());
+                    if (cantidadIngreso.compareTo(BigDecimal.ZERO) == -1)
+                    {
+                        System.out.println("Operacion incorrecta introduce un numero positivo");
+                    }
+                    else {
+                        saldo = saldo.add(cantidadIngreso);
+                        System.out.println("Ingreso exitoso. Saldo actual: " + saldo);
+                    }
                     break;
 
                 case 0:
