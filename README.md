@@ -1,3 +1,4 @@
+Cara nardos el proyecto tiene como jdk el JDK21
 Acciones del Programador Colaborador (Cajero v2,osea tu parte Ismael):
 
 Fork del Repositorio y Clonación:
