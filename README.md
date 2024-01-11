@@ -1,6 +1,6 @@
 El proyecto tiene como jdk el JDK21.
-Acciones del Programador Colaborador (Cajero v2,osea tu parte Ismael):
-Darío se encarga de la v3
+Acciones del Programador Colaborador (Cajero v2,osea tu parte Ismael)
+Cajero V3(Darío se encarga de la v3)
 
 Fork del Repositorio y Clonación:
 
