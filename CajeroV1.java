@@ -11,6 +11,12 @@ import java.io.FileReader;
 
 public class CajeroV1 {
 
+
+    /* Que vamos a hacer ahora:
+    2 Opción 4 de menú para listar todas las cuentas de un cliente (se pide DNI)
+3 Opción 5 de menú: Consulta todas las cuentas y da la información del cliente (información de
+la cuenta y saldo y datos del cliente) cuyo saldo sea menor a una cantidad que se preguntará por consola.*/
+
     private static void escribirMovimiento(String movimiento) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("movimientos.txt", true))) {
             writer.write(movimiento);
