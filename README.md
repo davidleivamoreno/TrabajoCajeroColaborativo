@@ -1,3 +1,5 @@
+Actualizaciones del parche klk:
+Añadimos una vista de las Cuentas del Cliente Seleccionado con la Introducción del DNI
 El proyecto tiene como jdk el JDK21.
 Acciones del Programador Colaborador (Cajero v2,osea tu parte Ismael)
 Cajero V3(Darío se encarga de la v3)
