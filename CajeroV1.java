@@ -47,6 +47,9 @@ la cuenta y saldo y datos del cliente) cuyo saldo sea menor a una cantidad que s
             System.out.println("Error al borrar los movimientos: " + e.getMessage());
         }
     }
+    public static void mostrarCuentasClientes(String dni){
+
+    }
     public static void main(String[] args) {
         BigDecimal saldo = BigDecimal.valueOf(1000.0);
         Scanner scanner = new Scanner(System.in);
@@ -93,7 +96,9 @@ la cuenta y saldo y datos del cliente) cuyo saldo sea menor a una cantidad que s
                 case 3:
                     verMovimientos();
                     break;
-
+                case 4:
+                    mostrarCuentasClientes("");
+                    break;
                 case 0:
                     borrarMovimientos();
                     System.out.println("Gracias por usar el cajero automático.");
